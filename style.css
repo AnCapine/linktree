@@ -61,12 +61,12 @@ body {
   font-size: 30px;
   color: #fff;
   text-decoration: none;
-  transition: transform 0.25s;
+  transition: transform 0.25s ease;
   border-radius: 10px;
 }
 
 .menu a:hover {
-  transform: translateY(-10px);
+  transform: scale(1.15);
 }
 
 .bg {
@@ -89,13 +89,15 @@ body {
 .menu li:nth-child(6) a { background: #ff5700; }     /* Reddit */
 .menu li:nth-child(7) a { background: #05CC47; }     /* DeviantArt */
 
-.menu li:nth-child(1):hover ~ .bg { background: #3d3d3d; }
-.menu li:nth-child(2):hover ~ .bg { background: #E1306C; }
-.menu li:nth-child(3):hover ~ .bg { background: #1DA1F2; }
-.menu li:nth-child(4):hover ~ .bg { background: #FF0000; }
-.menu li:nth-child(5):hover ~ .bg { background: #5865F2; }
-.menu li:nth-child(6):hover ~ .bg { background: #ff5700; }
-.menu li:nth-child(7):hover ~ .bg { background: #05CC47; }
+/* Darker background versions */
+.menu li:nth-child(1):hover ~ .bg { background: #1f1f1f; }     /* TikTok - darker */
+.menu li:nth-child(2):hover ~ .bg { background: #9d1f4d; }     /* Instagram - darker */
+.menu li:nth-child(3):hover ~ .bg { background: #167ab4; }     /* X - darker */
+.menu li:nth-child(4):hover ~ .bg { background: #b30000; }     /* YouTube - darker */
+.menu li:nth-child(5):hover ~ .bg { background: #3e47b1; }     /* Discord - darker */
+.menu li:nth-child(6):hover ~ .bg { background: #b33d00; }     /* Reddit - darker */
+.menu li:nth-child(7):hover ~ .bg { background: #037a2c; }     /* DeviantArt - darker */
+
 
 @media (max-width: 600px) {
   .profile img {
