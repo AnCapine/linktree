@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  overflow: auto;
-}
-
 body {
   background: #000;
   font-family: 'Segoe UI', sans-serif;
@@ -16,8 +11,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 100px 20px 20px;
+  min-height: 100vh;
+  padding: 48px 20px 48px;
 }
 
 /* Platform color variables */
