@@ -20,9 +20,21 @@ body {
   padding: 100px 20px 20px;
 }
 
+/* Platform color variables */
+:root {
+  --color-tiktok:     #3d3d3d;
+  --color-instagram:  #E1306C;
+  --color-x:          #1DA1F2;
+  --color-youtube:    #FF0000;
+  --color-discord:    #5865F2;
+  --color-reddit:     #ff5700;
+  --color-deviantart: #05CC47;
+}
+
 .profile {
   text-align: center;
   margin-bottom: 15px;
+  animation: fadeUp 0.5s ease forwards;
 }
 
 .profile img {
@@ -52,23 +64,53 @@ body {
 .menu li {
   list-style: none;
   width: 100%;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
 }
 
 .menu a {
-  display: block;
-  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 0;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   color: #fff;
   text-decoration: none;
   transition: transform 0.25s ease;
   border-radius: 10px;
 }
 
-.menu a:hover {
-  transform: scale(1.15);
+.menu a span {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
+.menu a:hover {
+  transform: scale(1.05);
+}
+
+/* Platform button colors */
+.tiktok a     { background: var(--color-tiktok); }
+.instagram a  { background: var(--color-instagram); }
+.x-twitter a  { background: var(--color-x); }
+.youtube a    { background: var(--color-youtube); }
+.discord a    { background: var(--color-discord); }
+.reddit a     { background: var(--color-reddit); }
+.deviantart a { background: var(--color-deviantart); }
+
+/* Hover background colors (read by JS) */
+.tiktok     { --hover-bg: #1f1f1f; }
+.instagram  { --hover-bg: #9d1f4d; }
+.x-twitter  { --hover-bg: #167ab4; }
+.youtube    { --hover-bg: #b30000; }
+.discord    { --hover-bg: #3e47b1; }
+.reddit     { --hover-bg: #b33d00; }
+.deviantart { --hover-bg: #037a2c; }
+
+/* Background overlay */
 .bg {
   position: fixed;
   z-index: -1;
@@ -80,24 +122,25 @@ body {
   pointer-events: none;
 }
 
-/* Platform Colors (new order) */
-.menu li:nth-child(1) a { background: #3d3d3d; }     /* TikTok */
-.menu li:nth-child(2) a { background: #E1306C; }     /* Instagram */
-.menu li:nth-child(3) a { background: #1DA1F2; }     /* X */
-.menu li:nth-child(4) a { background: #FF0000; }     /* YouTube */
-.menu li:nth-child(5) a { background: #5865F2; }     /* Discord */
-.menu li:nth-child(6) a { background: #ff5700; }     /* Reddit */
-.menu li:nth-child(7) a { background: #05CC47; }     /* DeviantArt */
+/* Page load animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* Darker background versions */
-.menu li:nth-child(1):hover ~ .bg { background: #1f1f1f; }     /* TikTok - darker */
-.menu li:nth-child(2):hover ~ .bg { background: #9d1f4d; }     /* Instagram - darker */
-.menu li:nth-child(3):hover ~ .bg { background: #167ab4; }     /* X - darker */
-.menu li:nth-child(4):hover ~ .bg { background: #b30000; }     /* YouTube - darker */
-.menu li:nth-child(5):hover ~ .bg { background: #3e47b1; }     /* Discord - darker */
-.menu li:nth-child(6):hover ~ .bg { background: #b33d00; }     /* Reddit - darker */
-.menu li:nth-child(7):hover ~ .bg { background: #037a2c; }     /* DeviantArt - darker */
-
+.menu li:nth-child(1) { animation-delay: 0.10s; }
+.menu li:nth-child(2) { animation-delay: 0.18s; }
+.menu li:nth-child(3) { animation-delay: 0.25s; }
+.menu li:nth-child(4) { animation-delay: 0.33s; }
+.menu li:nth-child(5) { animation-delay: 0.40s; }
+.menu li:nth-child(6) { animation-delay: 0.48s; }
+.menu li:nth-child(7) { animation-delay: 0.55s; }
 
 @media (max-width: 600px) {
   .profile img {
@@ -113,7 +156,7 @@ body {
   }
 
   .menu a {
-    font-size: 28px;
-    padding: 20px 0;
+    font-size: 22px;
+    padding: 16px 0;
   }
 }
